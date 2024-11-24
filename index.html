@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3D Santa Card</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #000022;
+        }
+        .card {
+            height: 400px;
+            width: 570px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            cursor: pointer;
+            transition: 2s;
+            perspective: 1200px;
+        }
+        .card:hover {
+            transform: rotate(-5deg);
+        }
+        .card:hover .outside {
+            transform: rotateY(-130deg);
+        }
+        .outside {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50.1%;
+            transform-style: preserve-3d;
+            transition: 2s;
+            transform-origin: left;
+        }
+        .front, .back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .front {
+            background-color: #BE0F04;
+            background-image: url('https://i.pinimg.com/736x/fc/5f/5d/fc5f5d3d5032cc785428d9ace8fb2486.jpg');
+            background-size: cover;
+        }
+        .back {
+            background: linear-gradient(
+                to right,
+                #BE0F04 50%,
+                #7d0b03
+            );
+            transform: rotateY(180deg);
+        }
+        .inside {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            background: linear-gradient(
+                to left,
+                #BE0F04 50%,
+                #7d0b03
+            );
+            box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+        }
+        .inside .gif-container {
+            height: 100%;
+            overflow: hidden;
+        }
+        .gif-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .inside-f {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding-top: 120px;
+            font-family: 'Parisienne', cursive;
+            color: white;
+            font-size: 50px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="inside">
+        <div class="gif-container">
+            <img src="https://i.pinimg.com/originals/d4/3c/02/d43c026eaf02d74b73d914eb6ee1ed32.gif" alt="Birthday GIF">
+        </div>
+    </div>
+    <div class="outside">
+        <div class="front"></div>
+        <div class="back">
+            <div class="inside-f">
+                <p>Happy Birthday</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
