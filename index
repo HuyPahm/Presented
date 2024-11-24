@@ -4,18 +4,18 @@
     <title>3D Santa Card</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-     <style>
+    <style>
         *,
         *:before,
-        *:after{
+        *:after {
             box-sizing: border-box;
             padding: 0;
             margin: 0;
         }
-        body{
+        body {
             background-color: #000022;
         }
-        .card{
+        .card {
             height: 400px;
             width: 570px;
             position: absolute;
@@ -26,42 +26,35 @@
             bottom: 0;
             cursor: pointer;
             transition: 2s;
-            -webkit-perspective: 1200px;
-                perspective: 1200px;
-
+            perspective: 1200px;
         }
-        .card:hover{
+        .card:hover {
             transform: rotate(-5deg);
         }
-        .card:hover .outside{
+        .card:hover .outside {
             transform: rotateY(-130deg);
         }
-        .outside{
+        .outside {
             height: 100%;
             width: 50%;
             position: absolute;
             left: 50.1%;
-            -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
+            transform-style: preserve-3d;
             transition: 2s;
             transform-origin: left;
         }
-        .front,.back{
+        .front, .back {
             height: 100%;
             width: 100%;
-            position: absolute;  
+            position: absolute;
             backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            /*hide backface in firefox*/
-            transform: rotateX(0deg);   
         }
-        .front{
+        .front {
             background-color: #BE0F04;
-            z-index: 1;
+            background-image: url('https://i.pinimg.com/736x/fc/5f/5d/fc5f5d3d5032cc785428d9ace8fb2486.jpg');
+            background-size: cover;
         }
-
-
-        .back{
+        .back {
             background: linear-gradient(
                 to right,
                 #BE0F04 50%,
@@ -69,7 +62,7 @@
             );
             transform: rotateY(180deg);
         }
-        .inside{
+        .inside {
             height: 100%;
             width: 50%;
             position: absolute;
@@ -79,33 +72,45 @@
                 #BE0F04 50%,
                 #7d0b03
             );
-            background: url();
+            box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+        }
+        .inside .gif-container {
+            height: 100%;
+            overflow: hidden;
+        }
+        .gif-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .inside-f {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding-top: 120px;
             font-family: 'Parisienne', cursive;
             color: white;
-            font-size: 70px;
-            text-align: center;
-            line-height: 100px;
-            padding: 90px 10px;
-            box-shadow: 25px 25px 35px rgba(0,0,0,0.3);
+            font-size: 50px;
+            line-height: 1.5;
         }
-        .inside>p{
-            border-bottom: 10px dotted white;
-        }
-     </style>
+    </style>
 </head>
 <body>
 <div class="card">
-<div class="inside">
-    <p>Merry Christmas</p>
-</div>    
-<div class="outside">
-    <div class="front">
-        <div class="belt"></div>
-        <div class="mouth"></div>
-        <div class="beard"></div>
+    <div class="inside">
+        <div class="gif-container">
+            <img src="https://i.pinimg.com/originals/d4/3c/02/d43c026eaf02d74b73d914eb6ee1ed32.gif" alt="Birthday GIF">
+        </div>
     </div>
-    <div class="back"></div>
-</div>
+    <div class="outside">
+        <div class="front"></div>
+        <div class="back">
+            <div class="inside-f">
+                <p>Happy Birthday</p>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
