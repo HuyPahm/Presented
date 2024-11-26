@@ -51,8 +51,9 @@
         }
         .front {
             background-color: #BE0F04;
-            background-image: url('https://i.pinimg.com/736x/fc/5f/5d/fc5f5d3d5032cc785428d9ace8fb2486.jpg');
+            background-image: url('https://i.pinimg.com/736x/f5/57/8e/f5578e61399a037355fe272a4b428a31.jpg');
             background-size: cover;
+            background-position: -2cm center;
         }
         .back {
             background: linear-gradient(
@@ -88,11 +89,34 @@
             width: 100%;
             height: 100%;
             text-align: center;
-            padding-top: 120px;
+            padding-top: 20px; /* Dịch chữ Happy Birthday lên cao hơn */
             font-family: 'Parisienne', cursive;
             color: white;
             font-size: 50px;
             line-height: 1.5;
+        }
+        .message {
+            position: absolute;
+            left: 10%;
+            top: 45%; /* Điều chỉnh vị trí lời chúc */
+            font-family: 'Parisienne', cursive;
+            color: white;
+            font-size: 20px; /* Thu nhỏ kích thước chữ */
+            text-align: center;
+            width: 80%; /* Đảm bảo lời chúc không bị tràn */
+        }
+        .image-container {
+            position: absolute;
+            bottom: -5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            text-align: center;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Tạo góc bo tròn nhẹ */
         }
     </style>
 </head>
@@ -108,9 +132,16 @@
         <div class="back">
             <div class="inside-f">
                 <p>Happy Birthday</p>
+                <div class="message">
+                    <p>Wishing you all, get 6 bonus month salary ^^</p>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.pinimg.com/originals/bd/30/f0/bd30f0b54b812ac88403f72f2030f8cf.gif" alt="Celebration GIF">
+                </div>
             </div>
         </div>
     </div>
 </div>
 </body>
 </html>
+
